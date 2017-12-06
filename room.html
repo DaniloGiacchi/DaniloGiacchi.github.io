@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="web.css">
-
+ <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 </head>
 <body class="w3-content w3-border-left w3-border-right">
 
@@ -31,13 +31,18 @@
         }
     }
     function action_page(){
-      if(validateDate(document.getElementById("in").value) &&
-         validateDate(document.getElementById("out").value) &&
-         (document.getElementById("number_adults").value != "" || document.getElementById("number_kids").value != "")){
-           localStorage.setItem("chek_in",document.getElementById("in").value);
-           localStorage.setItem("chek_out",document.getElementById("out").value);
-           localStorage.setItem("number_adults",document.getElementById("number_adults").value);
-           localStorage.setItem("number_kids",document.getElementById("number_kids").value);
+      if (typeof(Storage) !== "undefined") {
+        if(validateDate(document.getElementById("in").value) &&
+          validateDate(document.getElementById("out").value) &&
+          (document.getElementById("number_adults").value != "" || document.getElementById("number_kids").value != "")){
+            localStorage.setItem("chek_in",document.getElementById("in").value);
+            localStorage.setItem("chek_out",document.getElementById("out").value);
+            localStorage.setItem("number_adults",document.getElementById("number_adults").value);
+            localStorage.setItem("number_kids",document.getElementById("number_kids").value);
+         }
+      }else {
+        document.getElementById("result").innerHTML = "web Storage non supportato";
+        alert("not supported");
       }
 
     }
@@ -86,12 +91,12 @@
     <div class="w3-display-container mySlides">
       <div id="result_living"></div>
       <img id="image_living" src = "" style="width:700px;height:600px;margin-bottom:-6px"></img>
-  -->  <div class="w3-display-bottomleft w3-container w3-black">
+-->   <div class="w3-display-bottomleft w3-container w3-black">
         <p>Living Room</p>
       </div>
     </div>
     <div class="w3-display-container mySlides">
-    <img src="/w3images/diningroom.jpg" style="width:100%;margin-bottom:-6px" id = "result">
+    <img src="" style="width:100%;margin-bottom:-6px" id = "result">
     <div id="result_dining"></div>
     <img id="image_dining" src = "" style="width:700px;height:600px;margin-bottom:-6px"></img>
       <div class="w3-display-bottomleft w3-container w3-black">
@@ -99,7 +104,7 @@
       </div>
     </div>
     <div class="w3-display-container mySlides">
-    <img src="/w3images/bedroom.jpg" style="width:100%;margin-bottom:-6px">
+    <img src="" style="width:100%;margin-bottom:-6px">
     <div id="result"></div>
     <img id="image" src = "" style="width:700px;height:600px;margin-bottom:-6px"></img>
       <div class="w3-display-bottomleft w3-container w3-black">
@@ -107,7 +112,7 @@
       </div>
     </div>
     <div class="w3-display-container mySlides">
-    <img src="/w3images/livingroom2.jpg" style="width:100%;margin-bottom:-6px">
+    <img src="" style="width:100%;margin-bottom:-6px">
     <div id="result_living_2"></div>
     <img id="image_living_2" src = "" style="width:700px;height:600px;margin-bottom:-6px"></img>
       <div class="w3-display-bottomleft w3-container w3-black">
@@ -216,7 +221,7 @@
       <i onclick="document.getElementById('subscribe').style.display='none'" class="fa fa-remove w3-button w3-xlarge w3-right w3-transparent"></i>
       <h2 class="w3-wide">SUBSCRIBE</h2>
       <p>Join our mailing list to receive updates on available dates and special offers.</p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail" id = "email_in"></p>
       <button type="button" class="w3-button w3-padding-large w3-green w3-margin-bottom" onclick="document.getElementById('subscribe').style.display='none'">Subscribe</button>
     </div>
   </div>
@@ -224,6 +229,7 @@
 
 <script>
 // Script to open and close sidebar when on tablets and phones
+
 function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("myOverlay").style.display = "block";

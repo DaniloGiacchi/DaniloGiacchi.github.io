@@ -154,9 +154,9 @@ function myFunction() {
   <div class="w3-container w3-padding-32" id="contact">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
     <p>Lets get in touch and talk about your and our next project.</p>
-    <form action="" target="_blank">
+    <form action="" target="_blank" id = "contact_form">
       <input class="w3-input" type="text" placeholder="Name" required name="Name">
-      <input class="w3-input w3-section" type="text" placeholder="Email" required name="Email">
+      <input class="w3-input w3-section" type="text" placeholder="Email" required name="Email" id = "email">
       <input class="w3-input w3-section" type="text" placeholder="Subject" required name="Subject">
       <input class="w3-input w3-section" type="text" placeholder="Comment" required name="Comment">
       <button class="w3-button w3-black w3-section" type="submit" onclick="sendMessage();">
@@ -165,8 +165,23 @@ function myFunction() {
     </form>
   </div>
   <script>
+  function validateEmail(emailField){
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        if (reg.test(emailField) == false)
+        {
+
+            return false;
+        }
+        return true;
+  }
   function sendMessage(){
-      alert("Message sent succesfully");
+      if(validateEmail(document.getElementById("email"))){
+        alert("Message sent succesfully");
+      //  getElementById('contact_form').action = "#contact";
+      }else{
+        alert("Message not sent. Be sure to have typed an email address");
+      //  getElementById('contact_form').action = "#contact";
+      }
   }
   </script>
 <!-- End page content -->
