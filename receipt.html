@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <script>
+    function setImage(){
+      if (typeof(Storage) !== "undefined") {
+        // prendo valore salvato e assegno al campo src del tag img con id image
+        document.getElementById("rent_img").src = localStorage.getItem("img_url");
+
+      } else {
+        document.getElementById("result").innerHTML = "web Storage non supportato";
+      }
+    }
+
+    </script>
+      <link rel="stylesheet" href="web.css">
+  </head>
+  <body onload="setImage();">
+    <p>Receipt of payment for:</BR><p>
+      <div class ="container_payment">
+                <img id="rent_img" src = "" style="width:700px;height:600px;margin-bottom:-6px"></img>
+                <p> prezzo: 99€ <BR>
+              
+            </div>
+  </body>
+
+</html>
