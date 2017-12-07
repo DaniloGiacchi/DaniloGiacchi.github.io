@@ -46,14 +46,10 @@ function setWebInit(){
 }
 //setting item contained on localStorage showing bedroom-living-dining-living2 rooms
 function setSrc(url){
-
-    if (typeof(Storage) !== "undefined") {
-        window.localStorage.setItem("img_url",url[0]);
-        window.localStorage.setItem("img_url_living",url[1]);
-        window.localStorage.setItem("img_url_dining",url[2]);
-        window.localStorage.setItem("img_url_living_2",url[3]);
-    }
-
+      localStorage.setItem("img_url",url[0]);
+      localStorage.setItem("img_url_living",url[1]);
+      localStorage.setItem("img_url_dining",url[2]);
+      localStorage.setItem("img_url_living_2",url[3]);
 }
 //check if the text submitted is an email
 function validateEmail(id_email) {
@@ -105,10 +101,10 @@ function action_page(){
     if(validateDate(document.getElementById("in").value) &&
       validateDate(document.getElementById("out").value) &&
       (document.getElementById("number_adults").value != "" || document.getElementById("number_kids").value != "")){
-        window.localStorage.setItem("chek_in",document.getElementById("in").value);
-        window.localStorage.setItem("chek_out",document.getElementById("out").value);
-        window.localStorage.setItem("number_adults",document.getElementById("number_adults").value);
-        window.localStorage.setItem("number_kids",document.getElementById("number_kids").value);
+        localStorage.setItem("chek_in",document.getElementById("in").value);
+        localStorage.setItem("chek_out",document.getElementById("out").value);
+        localStorage.setItem("number_adults",document.getElementById("number_adults").value);
+        localStorage.setItem("number_kids",document.getElementById("number_kids").value);
      }
   }else {
     document.getElementById("result").innerHTML = "web Storage non supportato";
@@ -118,21 +114,19 @@ function action_page(){
 }
 
 function init(){
-
-    if (typeof(Storage) !== "undefined") {
-      // prendo valore salvato e assegno al campo src del tag img con id image
-      document.getElementById('image').src = window.localStorage.getItem('img_url');
-      document.getElementById('image_living').src = window.localStorage.getItem('img_url_living');
-      document.getElementById('image_dining').src = window.localStorage.getItem('img_url_dining');
-      document.getElementById('image_living_2').src = window.localStorage.getItem('img_url_living_2');
-      document.getElementById('liv').src = window.localStorage.getItem('img_url_living');
-      document.getElementById('bed').src = window.localStorage.getItem('img_url');
-      document.getElementById('din').src = window.localStorage.getItem('img_url_dining');
-      document.getElementById('2liv').src = window.localStorage.getItem('img_url_living_2');
-    } else {
-      document.getElementById("result").innerHTML = "web Storage non supportato";
-    }
-
+  if (typeof(Storage) !== "undefined") {
+    // prendo valore salvato e assegno al campo src del tag img con id image
+    document.getElementById('image').src = localStorage.getItem('img_url');
+    document.getElementById('image_living').src = localStorage.getItem('img_url_living');
+    document.getElementById('image_dining').src = localStorage.getItem('img_url_dining');
+    document.getElementById('image_living_2').src = localStorage.getItem('img_url_living_2');
+    document.getElementById('liv').src = localStorage.getItem('img_url_living');
+    document.getElementById('bed').src = localStorage.getItem('img_url');
+    document.getElementById('din').src = localStorage.getItem('img_url_dining');
+    document.getElementById('2liv').src = localStorage.getItem('img_url_living_2');
+  } else {
+    document.getElementById("result").innerHTML = "web Storage non supportato";
+  }
 }
 
 
@@ -209,11 +203,11 @@ function validDate(dValue) {
       document.getElementById('cvc_card').value.length == 3 &&
       validDate(document.getElementById('expiration_date_card').value) &&
       validateEmail(document.getElementById('email_card').value)){
-                window.localStorage.setItem("card_owner_ls",document.getElementById('card_owner').value);
-                window.localStorage.setItem("number_card_ls",document.getElementById('number_card').value);
-                window.localStorage.setItem("cvc_ls",document.getElementById('cvc_card').value);
-                window.localStorage.setItem("expiration_date_card_ls",document.getElementById('expiration_date_card').value);
-                window.localStorage.setItem("email_card_ls",document.getElementById('email_card').value);
+                localStorage.setItem("card_owner_ls",document.getElementById('card_owner').value);
+                localStorage.setItem("number_card_ls",document.getElementById('number_card').value);
+                localStorage.setItem("cvc_ls",document.getElementById('cvc_card').value);
+                localStorage.setItem("expiration_date_card_ls",document.getElementById('expiration_date_card').value);
+                localStorage.setItem("email_card_ls",document.getElementById('email_card').value);
                 alert("payment submitted succesfully");
                 document.getElementById('form_of_pay').action = "index.html";
     }else{
