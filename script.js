@@ -43,7 +43,7 @@ function setWebInit(){
       "https://st.hzcdn.com/fimgs/8db1e66d010066b1_7542-w500-h400-b0-p0--.jpg"];
       /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
 
-}
+} 
 //setting item contained on localStorage showing bedroom-living-dining-living2 rooms
 function setSrc(url){
 
