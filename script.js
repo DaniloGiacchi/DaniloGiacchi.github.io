@@ -1,49 +1,4 @@
-//set the initial array containing the images urls of the houses
-function setWebInit(){
 
-  var other_img_1 = [
-      "https://aff.bstatic.com/images/hotel/840x460/579/57966930.jpg",
-      "https://i.pinimg.com/736x/b7/b5/7b/b7b57b35e9eca89a3f2fb41da80a90ab--grey-blue-dining-room-dark-wood-dining-room.jpg",
-      "https://images2.roomstogo.com/is/image/roomstogo/dr_rm_bedfordheights~Bedford-Heights-Cherry-5-Pc-Dining-Room.jpeg",
-      "https://i.pinimg.com/736x/09/7d/b2/097db215002912936832eebbb0c3105d--wall-of-windows-the-window.jpg"];
-    var other_img_2 = [
-      "https://images2.roomstogo.com/is/image/roomstogo/br_rm_urbanplains_gray_uph~Urban-Plains-Gray-7-Pc-Queen-Upholstered-Bedroom.jpeg",
-      "https://st.hzcdn.com/fimgs/0c611ca308e60df1_3015-w296-h183-b0-p0--.jpg",
-      "https://i.pinimg.com/736x/c0/1c/23/c01c23a6ed5ae2543312d45737da5891--luxury-dining-room-beautiful-dining-rooms.jpg",
-      "https://nellhills.com/nh/wp-content/post_photos/2010/08/MCs-LR-rugs.jpg"];
-    var other_img_3 = [
-      "https://aff.bstatic.com/images/hotel/840x460/579/57963518.jpg",
-      "https://images2.roomstogo.com/is/image/roomstogo/lr_rm_almira_gray~Almira-Gray-2-Pc-Living-Room.jpeg",
-      "https://images2.roomstogo.com/is/image/roomstogo/dr_rm_westerleigh1_uph~Westerleigh-Oak-5-Pc-Rectangle-Dining-Room.jpeg",
-      "https://i.pinimg.com/736x/87/b4/eb/87b4eb1f5afd9a1c3d57f6c2cc93575e--minimalist-home-decorating-living-rooms-minimalist-apartment-living-room.jpg"];
-    var other_img_4 = [
-      "https://images2.roomstogo.com/is/image/roomstogo/br_rm_gardenia_honey1~Gardenia-Honey-5-Pc-Queen-Platform-Bedroom.jpeg",
-      "https://images2.roomstogo.com/is/image/roomstogo/lr_rm_reina_white_sec~Reina-Point-White-Leather-4-Pc-Sectional.jpeg",
-      "https://i.pinimg.com/736x/6a/2a/c0/6a2ac08d78bcb762b1b13fae566ecdea--simple-chandelier-dining-room-industrial-decor-dining-room.jpg",
-      "https://i.pinimg.com/736x/e5/fd/8a/e5fd8ac60846688d8a152f0e44940335--grey-living-rooms-bright-decor-living-room.jpg"];
-    var other_img_5 = [
-      "https://files.synapp.it/43638/foto/prodotti/B/prd_43638_0372_1429645436449_B.jpg",
-      "https://i.pinimg.com/736x/ff/18/27/ff18275a3c2d79d6ad340ad769d31eb2--modern-living-rooms-living-room-designs.jpg",
-      "https://hips.hearstapps.com/hbu.h-cdn.co/assets/cm/15/04/54bf50d07cd65_-_7-dining-room-xlg-76059344.jpg",
-      "https://i1.wp.com/dashideout.com/wp-content/uploads/2017/02/Wallpaper-Living-Room-Ideas-For-Decorating-Photo-Of-nifty-Wallpaper-Living-Room-Ideas-For-Decorating-Info-Cute.jpg"];
-    var other_img_6 = [
-      "https://i.pinimg.com/736x/71/df/08/71df08b9f81b4e888c2f2b37463d1024--master-bedroom-fixer-upper-style-simple-master-bedroom.jpg",
-      "https://i.pinimg.com/736x/36/34/93/36349359203b6dc509931e5fe24a0623--christmas-living-rooms-christmas-room.jpg",
-      "https://images2.roomstogo.com/is/image/roomstogo/dr_rm_savona_white~Sofia-Vergara-Savona-Ivory-5-Pc-Rectangle-Dining-Room.jpeg",
-      "https://tjihome.com/wp-content/uploads/2016/08/Fantastic-country-living-room-decor-HD9I20.jpg"];
-    var other_img_7 = [
-      "https://bbimages.eu/images/users/17321/benb/rooms/572444_1_600_md.jpg?1452765517",
-      "https://images2.roomstogo.com/is/image/roomstogo/lr_rm_bellingham_gray~Cindy-Crawford-Home-Bellingham-Gray-7-Pc-Living-Room.jpeg",
-      "https://images2.roomstogo.com/is/image/roomstogo/dr_rm_hillcreek_black_6_chrs_~Hill-Creek-Black-5-Pc-Rectangle-Dining-Room.jpeg",
-      "https://images2.roomstogo.com/is/image/roomstogo/lr_rm_bellingham_gray~Cindy-Crawford-Home-Bellingham-Gray-7-Pc-Living-Room.jpeg"];
-    var other_img_8 = [
-      "https://www.pletna.com/wp-content/uploads/2016/10/Garni-penzion-Pletna-Bled-3.jpg",
-      "https://i.pinimg.com/736x/b7/b5/7b/b7b57b35e9eca89a3f2fb41da80a90ab--grey-blue-dining-room-dark-wood-dining-room.jpg",
-      "https://i.pinimg.com/736x/8c/02/ba/8c02ba0b13cdf53a356aee7337cf0cad--elegant-dining-room-rustic-dining-rooms.jpg",
-      "https://st.hzcdn.com/fimgs/8db1e66d010066b1_7542-w500-h400-b0-p0--.jpg"];
-      /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-
-}
 //setting item contained on localStorage showing bedroom-living-dining-living2 rooms
 function setSrc(url){
 
