@@ -2,6 +2,7 @@
 <head>
   <link rel="stylesheet" href="web.css">
   <title>Payment Page</title>
+  <script src = "script.js"></script>
 </head>
 <body class = "body_pay">
   <p class = "par_meth">Payment method</p>
@@ -14,50 +15,6 @@
       </img>
     </div>
   </div>
-  <script>
-  function validDate(dValue) {
-      var result = false;
-      dValue = dValue.split('/');
-      var pattern = /^\d{2}$/;
-      if (dValue[0] < 1 || dValue[0] > 12)
-        result = true;
-      if (!pattern.test(dValue[0]) || !pattern.test(dValue[1]))
-        result = true;
-      if (dValue[2])
-        result = true;
-      if (result){ alert("Please enter a valid date in MM/YY format."); return false;}else{return true;}
-
-  }
-  function validateEmail(emailField){
-        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-        if (reg.test(emailField) == false)
-        {
-            alert('Invalid Email Address');
-            return false;
-        }
-        return true;
-  }
-  function submitPay(){
-    if(document.getElementById('card_owner').value != "" &&
-      !isNaN(document.getElementById('number_card').value) &&
-      document.getElementById('number_card').value.length == 16 &&
-      !isNaN(document.getElementById('cvc_card').value) &&
-      document.getElementById('cvc_card').value.length == 3 &&
-      validDate(document.getElementById('expiration_date_card').value) &&
-      validateEmail(document.getElementById('email_card').value)){
-                localStorage.setItem("card_owner_ls",document.getElementById('card_owner').value);
-                localStorage.setItem("number_card_ls",document.getElementById('number_card').value);
-                localStorage.setItem("cvc_ls",document.getElementById('cvc_card').value);
-                localStorage.setItem("expiration_date_card_ls",document.getElementById('expiration_date_card').value);
-                localStorage.setItem("email_card_ls",document.getElementById('email_card').value);
-                alert("payment submitted succesfully");
-                document.getElementById('form_of_pay').action = "index.html";
-    }else{
-      document.getElementById('form_of_pay').action = "payment.html";
-      alert("There are some missing field!");
-    }
-  }
-  </script>
   <form action = "" id = "form_of_pay">
     <div class = "container_pay">
       <div class = "compilation_form">

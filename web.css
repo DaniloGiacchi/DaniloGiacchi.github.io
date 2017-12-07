@@ -105,6 +105,11 @@ body,h1,h2,h3,h4,h5,h6 {
   height:50%;
   margin:2.5%;
 }
+
+img.demo.w3-opacity.w3-hover-opacity-off{
+  width:225px;
+  height: 225px;
+}
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {
   .topnav a:not(:first-child) {display: none;}
