@@ -16,12 +16,17 @@ body,h1,h2,h3,h4,h5,h6 {
   height:50%;
   margin:2.5%;
 }
+.images_gall{
+  width:500px;
+  height:500px;
+}
 .gallery-img{
   width:350px;
   height:280px;
   padding-left: 40px;
   padding-bottom: 20px;
 }
+
 .par_meth{
   color: blue;
   margin-left: 39%;
@@ -107,8 +112,8 @@ body,h1,h2,h3,h4,h5,h6 {
 }
 
 img.demo.w3-opacity.w3-hover-opacity-off{
-  width:225px;
-  height: 225px;
+  width:100px;
+  height:100px;
 }
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {
