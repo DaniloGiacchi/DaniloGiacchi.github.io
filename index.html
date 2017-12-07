@@ -125,28 +125,28 @@ function myFunction() {
       <h3>John Doe</h3>
       <p class="w3-opacity">CEO & Founder</p>
       <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-      <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+      <a href = "#contact"><p><button class="w3-button w3-light-grey w3-block">Contact</button></p></a>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
 
       <h3>Jane Doe</h3>
       <p class="w3-opacity">Architect</p>
       <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-      <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+      <a href = "#contact"><p><button class="w3-button w3-light-grey w3-block">Contact</button></p></a>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
 
       <h3>Mike Ross</h3>
-      <p class="w3-opacity">Architect</p>
+      <p class="w3-opacity">Surveyor</p>
       <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-      <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+    <a href = "#contact"><p><button class="w3-button w3-light-grey w3-block">Contact</button></p></a>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
 
       <h3>Dan Star</h3>
-      <p class="w3-opacity">Architect</p>
+      <p class="w3-opacity">Engineer</p>
       <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-      <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+      <a href = "#contact"><p><button class="w3-button w3-light-grey w3-block">Contact</button></p></a>
     </div>
   </div>
 
@@ -154,28 +154,32 @@ function myFunction() {
   <div class="w3-container w3-padding-32" id="contact">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
     <p>Lets get in touch and talk about your and our next project.</p>
-    <form action="" target="_blank" id = "contact_form">
+    <form action="#home" id = "contact_form">
       <input class="w3-input" type="text" placeholder="Name" required name="Name">
       <input class="w3-input w3-section" type="text" placeholder="Email" required name="Email" id = "email">
       <input class="w3-input w3-section" type="text" placeholder="Subject" required name="Subject">
       <input class="w3-input w3-section" type="text" placeholder="Comment" required name="Comment">
-      <button class="w3-button w3-black w3-section" type="submit" onclick="sendMessage();">
+      <button class="w3-button w3-black w3-section" type="submit" onclick="sendMessage(document.getElementById('email'));">
         <i class="fa fa-paper-plane"></i> SEND MESSAGE
       </button>
     </form>
   </div>
   <script>
-  function validateEmail(emailField){
-        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-        if (reg.test(emailField) == false)
-        {
+  function validateEmail(id_email) {
+    var email = id_email;
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
-            return false;
-        }
-        return true;
+    if (!filter.test(email.value)) {
+      alert('Please provide a valid email address');
+      email.focus;
+      return false;
+    }else{
+      return true;
+    }
   }
-  function sendMessage(){
-      if(validateEmail(document.getElementById("email"))){
+
+  function sendMessage(id_email){
+      if(validateEmail(id_email)){
         alert("Message sent succesfully");
       //  getElementById('contact_form').action = "#contact";
       }else{

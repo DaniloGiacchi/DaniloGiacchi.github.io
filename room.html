@@ -47,6 +47,29 @@
 
     }
 
+    function validateEmail(id_email) {
+
+      var email = id_email;
+      var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+      if (!filter.test(email.value)) {
+        alert('Please provide a valid email address');
+        email.focus;
+        return false;
+      }else{
+        return true;
+      }
+    }
+    function sendMessage(id_email){
+        if(validateEmail(document.getElementById("email_in_contact"))){
+          alert("Message sent succesfully");
+        //  getElementById('contact_form').action = "#contact";
+        }else{
+          alert("Message not sent. Be sure to have typed an email address");
+        //  getElementById('contact_form').action = "#contact";
+        }
+    }
+
     </script>
 
     <!--<form action="/action_page.php" target="_blank">-->
@@ -196,17 +219,13 @@
     <i class="fa fa-phone" style="width:30px"></i> Phone: +00 151515<br>
     <i class="fa fa-envelope" style="width:30px"> </i> Email: mail@mail.com<br>
     <p>Questions? Go ahead, ask them:</p>
-    <form action="" target="_blank">
+    <form action="">
       <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email" id ="email_in_contact"></p>
       <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
-    <button type="submit" class="w3-button w3-green w3-third" onclick="sendMessage()">Send a Message</button>
+    <button type="submit" class="w3-button w3-green w3-third" onclick="sendMessage(document.getElementById('email_in_contact'));">Send a Message</button>
     </form>
-    <script>
-    function sendMessage(){
-        alert("Message sent succesfully");
-    }
-    </script>
+
   </div>
 
   <footer class="w3-container w3-padding-16" style="margin-top:32px">Powered by D.G.</footer>
@@ -222,14 +241,20 @@
       <h2 class="w3-wide">SUBSCRIBE</h2>
       <p>Join our mailing list to receive updates on available dates and special offers.</p>
       <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail" id = "email_in"></p>
-      <button type="button" class="w3-button w3-padding-large w3-green w3-margin-bottom" onclick="document.getElementById('subscribe').style.display='none'">Subscribe</button>
+      <button type="button" class="w3-button w3-padding-large w3-green w3-margin-bottom" onclick="Subscribe(document.getElementById('email_in'))">Subscribe</button>
     </div>
   </div>
 </div>
 
 <script>
 // Script to open and close sidebar when on tablets and phones
+function Subscribe(email_in){
+    if(validateEmail(email_in)){
+        document.getElementById('subscribe').style.display='none';
+    }else{
 
+    }
+}
 function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("myOverlay").style.display = "block";
